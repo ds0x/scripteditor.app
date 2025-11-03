@@ -1,5 +1,6 @@
 /* ---------- 1. Colours (light & dark) ---------- */
 :root {
+  /* light theme */
   --bg-window: #ffffff;
   --bg-header: #f5f5f5;
   --text: #222222;
@@ -12,6 +13,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* dark theme */
     --bg-window: #1e1e1e;
     --bg-header: #2b2b2b;
     --text: #f5f5f5;
@@ -52,7 +54,7 @@ body { background: #fafafa; margin: 0; padding: 1rem; }
 .window-controls { display: flex; gap: 6px; margin-right: 12px; }
 .window-controls span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
 .window-controls .close { background: var(--control-close); }
-.window-controls .minimize { background: var(--control-min); }
+.window-controls .minimize { background: var(--control_min); }
 .window-controls .maximize { background: var(--control-max); }
 
 .window-title { flex: 1; text-align: center; font-weight: 600; font-size: .95rem; color: var(--text); }
