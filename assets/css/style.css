@@ -1,6 +1,4 @@
-/* assets/css/style.css */
-
-/* 1. Light & dark colours -------------------------------------------- */
+/* ---------- 1. Colours (light & dark) ---------- */
 :root {
   --bg-window: #ffffff;
   --bg-header: #f5f5f5;
@@ -22,13 +20,13 @@
   }
 }
 
-/* 2. Global -------------------------------------------------------- */
+/* ---------- 2. Global reset & body ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); }
 body { background: #fafafa; margin: 0; padding: 1rem; }
 @media (prefers-color-scheme: dark) { body { background: #111111; } }
 
-/* 3. Script‑Editor window ------------------------------------------- */
+/* ---------- 3. Script‑Editor window ---------- */
 .script-editor-window {
   max-width: 900px;
   margin: 2rem auto;
@@ -59,16 +57,16 @@ body { background: #fafafa; margin: 0; padding: 1rem; }
 
 .window-title { flex: 1; text-align: center; font-weight: 600; font-size: .95rem; color: var(--text); }
 
-/* 4. Content -------------------------------------------------------- */
 .window-content { padding: 20px 16px; overflow: auto; background: var(--bg-window); color: var(--text); }
 
+/* ---------- 4. Typography inside the window ---------- */
 .window-content h1, .window-content h2, .window-content h3 { margin: 1.4em 0 .6em; }
 .window-content p { margin: .8em 0; }
 .window-content blockquote { margin: 1em 0; padding-left: 1em; border-left: 4px solid var(--border); opacity: .8; }
 .window-content code { font-family: Menlo, "SF Mono", Monaco, monospace; background: var(--code-bg); padding: .2em .4em; border-radius: 4px; }
 .window-content pre { background: var(--code-bg); padding: 1em; overflow-x: auto; border-radius: 4px; }
 
-/* 5. Post list (home page) ------------------------------------------- */
+/* ---------- 5. Post list (home page) ---------- */
 .post-list { list-style: none; padding: 0; }
 .post-list li { margin: .4em 0; }
 .post-list a { color: var(--text); text-decoration: none; }
