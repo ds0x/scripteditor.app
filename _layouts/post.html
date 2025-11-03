@@ -1,0 +1,21 @@
+<!-- _layouts/post.html -->
+---
+layout: default
+highlight: true          # optional: load highlight.js CSS
+highlight_dark: true
+---
+
+<div class="script-editor-window">
+  <div class="window-header">
+    <div class="window-controls">
+      <span class="close"></span>
+      <span class="minimize"></span>
+      <span class="maximize"></span>
+    </div>
+    <div class="window-title">{{ page.title }}</div>
+  </div>
+
+  <div class="window-content">
+    {{ content }}
+  </div>
+</div>
