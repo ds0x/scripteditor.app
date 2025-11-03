@@ -1,15 +1,15 @@
-<!-- _layouts/default.html -->
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <title>{{ page.title }} – {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Our own stylesheet -->
+  <!-- Your window styling -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Optional: syntax‑highlighting CSS -->
+  <!-- Highlight.js CSS – only if the page has it -->
   {% if page.highlight %}
   <link rel="stylesheet" href="{{ '/assets/css/highlight/github.css' | relative_url }}">
   {% endif %}
@@ -19,5 +19,12 @@
 </head>
 <body>
   {{ content }}
+
+  <!-- Highlight.js JS – only if the page has it -->
+  {% if page.highlight or page.highlight_dark %}
+  <script src="{{ '/assets/js/highlight.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/languages/applescript.min.js' | relative_url }}"></script>
+  <script>hljs.highlightAll();</script>
+  {% endif %}
 </body>
 </html>
