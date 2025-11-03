@@ -1,0 +1,23 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Our own stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Optional: syntax‑highlighting CSS -->
+  {% if page.highlight %}
+  <link rel="stylesheet" href="{{ '/assets/css/highlight/github.css' | relative_url }}">
+  {% endif %}
+  {% if page.highlight_dark %}
+  <link rel="stylesheet" href="{{ '/assets/css/highlight/github-dark.css' | relative_url }}">
+  {% endif %}
+</head>
+<body>
+  {{ content }}
+</body>
+</html>
