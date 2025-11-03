@@ -1,8 +1,7 @@
-/* -------------------------------------------------
-   1.  Variables – Light + Dark
-   ------------------------------------------------- */
+/* assets/css/style.css */
+
+/* 1. Light & dark colours -------------------------------------------- */
 :root {
-  /* Base colours – light theme */
   --bg-window: #ffffff;
   --bg-header: #f5f5f5;
   --text: #222222;
@@ -13,7 +12,6 @@
   --control-max: #28c840;
 }
 
-/* Dark‑mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-window: #1e1e1e;
@@ -21,35 +19,16 @@
     --text: #f5f5f5;
     --code-bg: #2d2d2d;
     --border: #444444;
-    --control-close: #ff5f57;
-    --control-min: #ffbd2e;
-    --control-max: #28c840;
   }
 }
 
-/* -------------------------------------------------
-   2.  Global reset & body styling
-   ------------------------------------------------- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-html {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-}
-body {
-  background: #fafafa;
-  margin: 0;
-  padding: 0 1rem;
-}
-@media (prefers-color-scheme: dark) {
-  body { background: #111111; }
-}
+/* 2. Global -------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); }
+body { background: #fafafa; margin: 0; padding: 1rem; }
+@media (prefers-color-scheme: dark) { body { background: #111111; } }
 
-/* -------------------------------------------------
-   3.  Script‑Editor window
-   ------------------------------------------------- */
+/* 3. Script‑Editor window ------------------------------------------- */
 .script-editor-window {
   max-width: 900px;
   margin: 2rem auto;
@@ -59,7 +38,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   overflow: hidden;
   font-size: 1rem;
-  /* Add a subtle drop‑shadow to the header */
   display: flex;
   flex-direction: column;
 }
@@ -70,99 +48,28 @@ body {
   padding: 6px 12px;
   background: var(--bg-header);
   border-bottom: 1px solid var(--border);
-  /* Slight gradient (optional) */
   background-image: linear-gradient(to bottom, #fff, var(--bg-header));
 }
 
-.window-controls {
-  display: flex;
-  gap: 6px;
-  margin-right: 12px;
-}
-.window-controls span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
+.window-controls { display: flex; gap: 6px; margin-right: 12px; }
+.window-controls span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
 .window-controls .close { background: var(--control-close); }
 .window-controls .minimize { background: var(--control-min); }
 .window-controls .maximize { background: var(--control-max); }
 
-.window-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  flex: 1;
-  text-align: center;
-  color: var(--text);
-  /* The title is the only thing that “floats” in the header. */
-}
+.window-title { flex: 1; text-align: center; font-weight: 600; font-size: .95rem; color: var(--text); }
 
-.window-content {
-  padding: 20px 16px;
-  overflow: auto;
-  background: var(--bg-window);
-  color: var(--text);
-}
+/* 4. Content -------------------------------------------------------- */
+.window-content { padding: 20px 16px; overflow: auto; background: var(--bg-window); color: var(--text); }
 
-/* -------------------------------------------------
-   4.  Typography inside the window
-   ------------------------------------------------- */
-.window-content h1, .window-content h2, .window-content h3 {
-  margin-top: 1.4em;
-  margin-bottom: 0.6em;
-}
-.window-content p {
-  margin: 0.8em 0;
-}
-.window-content blockquote {
-  margin: 1em 0;
-  padding-left: 1em;
-  border-left: 4px solid var(--border);
-  color: inherit;
-  opacity: 0.8;
-}
-.window-content code {
-  font-family: Menlo, "SF Mono", Monaco, monospace;
-  background: var(--code-bg);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-}
-.window-content pre {
-  background: var(--code-bg);
-  padding: 1em;
-  overflow-x: auto;
-  border-radius: 4px;
-}
+.window-content h1, .window-content h2, .window-content h3 { margin: 1.4em 0 .6em; }
+.window-content p { margin: .8em 0; }
+.window-content blockquote { margin: 1em 0; padding-left: 1em; border-left: 4px solid var(--border); opacity: .8; }
+.window-content code { font-family: Menlo, "SF Mono", Monaco, monospace; background: var(--code-bg); padding: .2em .4em; border-radius: 4px; }
+.window-content pre { background: var(--code-bg); padding: 1em; overflow-x: auto; border-radius: 4px; }
 
-/* -------------------------------------------------
-   5.  List of posts (index.md)
-   ------------------------------------------------- */
-.post-list {
-  list-style: none;
-  padding: 0;
-}
-.post-list li {
-  margin: 0.4em 0;
-}
-.post-list a {
-  color: var(--text);
-  text-decoration: none;
-}
-.post-list a:hover {
-  text-decoration: underline;
-}
-
-/* -------------------------------------------------
-   6.  Dark‑mode toggle – optional
-   ------------------------------------------------- */
-/* If you’d like a manual toggle, add a button somewhere in your layout
-   and toggle a `data-theme="dark"` attribute on `<html>`. */
-/* Example: */
-[data-theme="dark"] .script-editor-window {
-  background: var(--bg-window);
-  border-color: var(--border);
-}
-[data-theme="dark"] .window-header {
-  background: var(--bg-header);
-}
+/* 5. Post list (home page) ------------------------------------------- */
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin: .4em 0; }
+.post-list a { color: var(--text); text-decoration: none; }
+.post-list a:hover { text-decoration: underline; }
