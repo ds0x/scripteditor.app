@@ -1,10 +1,8 @@
-title:      tell application “Script Editor” to activate
-description: "AppleScript can't be contained."
-author:     ds
-baseurl:    "/scripteditor.app"            # ← leave empty for user sites
-url:        "https://ds0x.github.io"   # ← update for project sites
-
-theme:      null          # we’ll use our own CSS
-markdown:   kramdown
+title:        ScriptEditor Blog
+description:  activate
+url:          https://ds0x.github.io          # root URL of the site
+baseurl:      /scripteditor.app               # repository name
+theme:        null                            # no default theme
+markdown:     kramdown
 kramdown:
   input: GFM
